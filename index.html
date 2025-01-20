@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="CV de Robin FERNANDES, professionnel avec 9 années d'expérience dans le développement web. Découvrez mes compétences, mon expérience et mes coordonnées." />
+		<meta
+			name="keywords"
+			content="CV, Robin FERNANDES, dev front, compétences, expérience, contact" />
+		<meta name="author" content="Robin FERNANDES" />
+		<title>CV de Robin FERNANDES</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background: repeating-linear-gradient(
+						30deg,
+						#03a68833,
+						#03a68833 2px,
+						#ffffff00 2px,
+						#ffffff00 5%
+					),
+					repeating-linear-gradient(
+						150deg,
+						#03a68833,
+						#03a68833 2px,
+						#ffffff00 2px,
+						#ffffff00 5%
+					);
+				background-color: #e7e7e7;
+				background-size: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #011f26;
+				min-height: 100vh;
+			}
+
+			a {
+				color: #03a688;
+			}
+
+			.cv-container {
+				max-width: 800px;
+				background: #fff;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				display: flex;
+				flex-wrap: wrap;
+				border-radius: 25px 0 0 0;
+			}
+
+			header {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			header .content {
+				color: #011f26;
+				padding: 20px;
+				border-bottom: #03a688 3px solid;
+				display: flex;
+				align-items: flex-end;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+
+			header#main-header {
+				display: none;
+			}
+
+			.background-iframe {
+				position: absolute;
+				top: -65px;
+				left: -16%;
+				width: 180%;
+				height: calc(160% + 65px);
+				z-index: 0;
+				border: none;
+				overflow: hidden;
+			}
+
+			.content {
+				position: relative;
+				z-index: 1;
+				background: rgba(255, 255, 255, 0.8);
+				padding: 20px;
+			}
+
+			.photo {
+				width: 120px;
+				height: 120px;
+				border-radius: 50% 50% 0 0;
+				overflow: hidden;
+				margin-right: 20px;
+				color: #fff;
+				text-align: center;
+				margin-bottom: -20px;
+			}
+
+			.photo img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+
+			.header-text {
+				flex-grow: 1;
+				text-align: left;
+			}
+
+			.header-text h1,
+			.header-text h2 {
+				margin: 0;
+			}
+
+			.header-text h1 {
+				color: #03a688;
+			}
+
+			.contact-info {
+				text-align: right;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				gap: 8px;
+			}
+
+			.contact-info p {
+				margin: 5px 0;
+			}
+
+			.contact-info ul {
+				list-style: none;
+				padding-left: 0;
+			}
+
+			.contact-info li {
+				list-style: none;
+				padding-left: 20px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				font-weight: bold;
+			}
+
+			.contact-info li::before {
+				display: block;
+				content: '';
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				left: 0px;
+				background-size: contain;
+			}
+
+			.contact-info li:nth-child(1)::before {
+				background-image: url('src/icon-mail.svg');
+			}
+
+			.contact-info li:nth-child(2)::before {
+				background-image: url('src/icon-call.svg');
+			}
+
+			.contact-info li:nth-child(3)::before {
+				background-image: url('src/logo-linkedin.svg');
+			}
+
+			.contact-info li:nth-child(4)::before {
+				background-image: url('src/icon-pin.svg');
+			}
+
+			.contact-info li:nth-child(5)::before {
+				background-image: url('src/icon-transport.svg');
+			}
+
+			.main {
+				background: #fff;
+				padding: 20px;
+				margin: 20px 0;
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+
+			.column {
+				flex: 1;
+				min-width: 300px;
+				padding: 10px;
+			}
+
+			.column h2 {
+				border-bottom: 2px solid #03a688;
+				padding-bottom: 10px;
+				padding-top: 10px;
+			}
+
+			.column p,
+			.column ul {
+				margin: 10px 0;
+			}
+
+			.skill-list {
+				list-style-type: none;
+				padding: 0;
+			}
+
+			.skill-item {
+				margin-bottom: 10px;
+			}
+
+			.skill-bar {
+				display: flex;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+
+			.skill-bar label {
+				margin-left: 10px;
+				padding-left: 20px;
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+
+			.skill-bar label::before {
+				display: block;
+				content: '';
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				left: 0px;
+				background-size: contain;
+			}
+
+			.skill-item:nth-child(1) label::before {
+				background-image: url('src/logo-html5.svg');
+			}
+
+			.skill-item:nth-child(2) label::before {
+				background-image: url('src/logo-css3.svg');
+			}
+
+			.skill-item:nth-child(3) label::before {
+				background-image: url('src/logo-vue.svg');
+			}
+
+			.skill-item:nth-child(4) label::before {
+				background-image: url('src/logo-nodejs.svg');
+			}
+
+			.skill-item:nth-child(5) label::before {
+				background-image: url('src/icon-auto.svg');
+			}
+
+			.skill-item:nth-child(6) label::before {
+				background-image: url('src/logo-github.svg');
+			}
+
+			.skill-item:nth-child(7) label::before {
+				background-image: url('src/icon-seo.svg');
+			}
+
+			.skill-item:nth-child(8) label::before {
+				background-image: url('src/icon-accessibility.svg');
+			}
+
+			.skill-item:nth-child(9) label::before {
+				background-image: url('src/icon-responsive.svg');
+			}
+
+			.skill-item:nth-child(10) label::before {
+				background-image: url('src/icon-design.svg');
+			}
+
+			.skill-bar .skill-years {
+				border-radius: 7px;
+				overflow: hidden;
+				height: 14px;
+				background: #03a688;
+				color: white;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.edu h3 {
+				margin-bottom: 0;
+			}
+
+			.edu p {
+				margin: 0;
+				margin-left: 20px;
+			}
+
+			.exp--list {
+				margin-left: 10px;
+				padding-left: 20px;
+				border-left: 2px rgba(3, 166, 136, 0.5);
+				border-left-style: dotted;
+				position: relative;
+			}
+
+			.exp--list::before {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 20px solid rgba(3, 166, 136, 1);
+				margin: 0 auto;
+				position: absolute;
+				left: -11px;
+				top: -10px;
+			}
+
+			.exp--list article {
+				position: relative;
+			}
+
+			.exp--list article::before {
+				content: '';
+				display: block;
+				width: 4px;
+				height: 100%;
+				background: #03a688;
+				margin: 0 auto;
+				position: absolute;
+				left: -23px;
+				top: 0px;
+				border-radius: 2px;
+			}
+
+			.exp--list article h3 + p {
+				color: rgba(3, 166, 136, 1);
+			}
+
+			article.exp h3 {
+				margin-bottom: 0;
+			}
+
+			article.exp .exp--date span {
+				font-weight: bold;
+			}
+
+			article .exp--date {
+				margin: 0;
+			}
+
+			article .exp--company {
+				margin-top: 0;
+			}
+
+			article .exp--describ {
+				font-size: 0.8rem;
+			}
+
+			#interests ul {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 0;
+				gap: 20px;
+				justify-content: center;
+			}
+
+			.int {
+				margin: 0;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.int::before {
+				display: block;
+				content: '';
+				width: 24px;
+				height: 24px;
+				left: 0px;
+			}
+
+			.int:nth-child(1)::before {
+				background-image: url('src/icon-hiking.svg');
+			}
+
+			.int:nth-child(2)::before {
+				background-image: url('src/icon-cook.svg');
+			}
+
+			.int:nth-child(3)::before {
+				background-image: url('src/icon-bjj.svg');
+			}
+
+			.int:nth-child(4)::before {
+				background-image: url('src/icon-motor.svg');
+			}
+
+			footer {
+				color: #fff;
+				text-align: center;
+				padding: 10px;
+				margin-top: 20px;
+				width: 100%;
+				border-bottom: #03a688 6px solid;
+			}
+
+			@media print {
+				body {
+					background: #fff;
+					display: block;
+				}
+				.cv-container {
+					width: 100%;
+					height: auto;
+					box-shadow: none;
+					padding: 0;
+				}
+				header .background-iframe,
+				header .photo,
+				footer {
+					display: none;
+				}
+				.main {
+					padding: 0;
+					margin: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cv-container" role="document">
+			<header role="banner">
+				<!-- Voici un lien vers mon projet ISO CSS sur CodePen -->
+				<iframe
+					class="background-iframe"
+					src="https://codepen.io/hrfn/full/jYLYwm"
+					aria-hidden="true"></iframe>
+				<div class="content">
+					<div class="photo">
+						<img
+							src="https://media.licdn.com/dms/image/v2/C4E03AQE7cwCZJqjPGA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1649945966601?e=1742428800&v=beta&t=BroBt62hO02yzZ2Jba3huOR9Myh9Pt3Zq07O_J65LiA"
+							alt="Photo de Robin FERNANDES"
+							aria-label="Photo de Robin FERNANDES" />
+					</div>
+					<div class="header-text">
+						<h1>Robin<br />FERNANDES</h1>
+						<h2>Développeur Front-End</h2>
+					</div>
+					<div class="contact-info">
+						<ul>
+							<li>robinfernandes@outlook.fr</li>
+							<li>06 75 81 16 50</li>
+							<li>
+								<a
+									href="https://www.linkedin.com/in/robin-fernandes/"
+									target="_blank"
+									rel="noopener noreferrer"
+									>/robin-fernandes</a
+								>
+							</li>
+							<li>Toulouse</li>
+							<li>Permis B / A</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<div class="main" role="main">
+				<div class="column">
+					<section id="about">
+						<h2>Profil Professionnel</h2>
+						<p>
+							Passionné par le développement front-end, l'intégration et le code
+							graphique, je m'épanouis dans les domaines de l'UI et de l'UX.
+							J'apprécie le travail en équipe, où la collaboration et le partage
+							des connaissances permettent de réaliser des projets innovants et
+							de qualité. Je souhaite relever des défis et repousser mes
+							limites.
+						</p>
+					</section>
+
+					<section id="skills">
+						<h2>Compétences</h2>
+						<ul class="skill-list">
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 120px"><div>10 ans</div></span>
+									<label>Expertise en HTML</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 120px"><div>10 ans</div></span>
+									<label>Expertise en CSS (Scss)</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 60px"><div>4 ans</div></span>
+									<label>Maîtrise de JavaScript (VueJS)</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 60px"><div>4 ans</div></span>
+									<label>Expérience avec NPM et Yarn</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 60px"><div>4 ans</div></span>
+									<label>Compétences en Webpack et Vite</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 80px"><div>6 ans</div></span>
+									<label>Maîtrise du contrôle de version Git</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 110px"><div>9 ans</div></span>
+									<label>Optimisation SEO</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 50px"><div>3 ans</div></span>
+									<label>Accessibilité Web (RGAA)</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 110px"><div>9 ans</div></span>
+									<label>Design web adaptatif et réactif</label>
+								</div>
+							</li>
+							<li class="skill-item">
+								<div class="skill-bar">
+									<span class="skill-years" style="width: 110px"><div>9 ans</div></span>
+									<label>Expertise en UX/UI Design</label>
+								</div>
+							</li>
+						</ul>
+					</section>
+
+					<section id="education">
+						<h2>Formation</h2>
+						<article class="edu">
+							<h3>LPSIL DAM <span>(Développeur d'Application Mobile)</span></h3>
+							<small> Université de Nice-Sophia Antipolis | 2014 - 2015 </small>
+						</article>
+						<article class="edu">
+							<h3>
+								BTS SIO <span>(Services Informatiques aux Organisations)</span>
+							</h3>
+							<small> Cite Scolaire Louis Pergaud | 2011 - 2013 </small>
+						</article>
+					</section>
+				</div>
+
+				<div class="column">
+					<section id="experience">
+						<h2>Expérience</h2>
+						<div class="exp--list">
+							<article class="exp">
+								<h3>Intégrateur Web / Dev Front VueJS</h3>
+								<p class="exp--date">
+									<span id="countNow"></span> | oct. 2021 - aujourd'hui
+								</p>
+								<p class="exp--company">Squad</p>
+
+								<p class="exp--describ">
+									Mission pour CMA-CGM (Marseille, Full-Remote) :<br />
+									• Dev front, équipe customer journey optimisation<br />
+									• Senior intégrateur, équipe integration web ecom
+								</p>
+							</article>
+							<article class="exp">
+								<h3>Développeur Web / Infographiste</h3>
+								<p class="exp--date">
+									<span>3 ans 10 mois</span> | janv. 2018 - oct. 2021
+								</p>
+								<p class="exp--company">Freelance</p>
+
+								<p class="exp--describ">
+									Missions pour divers clients :<br />
+									• Création graphique<br />
+									• Développement en PHP et JavaScript
+								</p>
+							</article>
+							<article class="exp">
+								<h3>Développeur Web / Infographiste</h3>
+								<p class="exp--date">
+									<span>2 ans 5 mois</span> | sept. 2015 - janv. 2018
+								</p>
+								<p class="exp--company">ESI</p>
+
+								<p class="exp--describ">
+									Développement au sein du pôle marketing :<br />
+									• Création graphique<br />
+									• Développement en PHP et JavaScript
+								</p>
+							</article>
+							<article class="exp">
+								<h3>Développeur Full-Stack</h3>
+								<p class="exp--date">
+									<span>1 an 1 mois</span> | août 2014 - août 2015
+								</p>
+								<p class="exp--company">Creactive Com</p>
+
+								<p class="exp--describ">
+									Responsable du développement au sein d'une agence de communication :<br />
+									• Développement en PHP et JavaScript<br />
+									• Formations pour les clients
+								</p>
+							</article>
+						</div>
+					</section>
+
+					<section id="interests">
+						<h2>Points d'Intérêt</h2>
+						<ul>
+							<li class="int">Randonnée</li>
+							<li class="int">Cuisine</li>
+							<li class="int">Jiu-Jitsu Brésilien</li>
+							<li class="int">Moto</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+
+			<footer></footer>
+		</div>
+	</body>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const startDate = new Date('2021-10-01');
+			const endDate = new Date();
+
+			const calculateDuration = (start, end) => {
+				let years = end.getFullYear() - start.getFullYear();
+				let months = end.getMonth() - start.getMonth();
+
+				if (months < 0) {
+					years--;
+					months += 12;
+				}
+
+				return { years, months };
+			};
+
+			const updateDurationText = (duration) => {
+				const durationElement = document.querySelector('#countNow');
+				if (durationElement) {
+					durationElement.textContent = `${duration.years} ans ${duration.months} mois`;
+				}
+			};
+
+			const duration = calculateDuration(startDate, endDate);
+			updateDurationText(duration);
+		});
+	</script>
+</html>
