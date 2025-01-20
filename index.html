@@ -124,21 +124,28 @@
 				color: #03a688;
 			}
 
-			.contact-info {
+      .contact-info {
+        flex-grow: 1;
+      }
+			.contact-info ul{
 				text-align: right;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-end;
 				gap: 8px;
+        list-style: none;
+				padding-left: 0;
 			}
+      .contact-info--phone{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .contact-info--mail span{
+        display: none;
+      }
 
 			.contact-info p {
 				margin: 5px 0;
-			}
-
-			.contact-info ul {
-				list-style: none;
-				padding-left: 0;
 			}
 
 			.contact-info li {
@@ -412,6 +419,10 @@
 			}
 
 			@media print {
+        html {
+          print-color-adjust: economy;
+          filter: grayscale(1);
+        }
 				body {
 					background: #fff;
 					display: block;
@@ -455,8 +466,8 @@
 					</div>
 					<div class="contact-info">
 						<ul>
-							<li>robinfernandes@outlook.fr</li>
-							<li>06 75 81 16 50</li>
+							<li class="contact-info--mail"><span>robot</span>robin<span>robot</span>fer<span>robot</span>nan<span>robot</span>des<span>robot</span>@o<span>robot</span>utlo<span>robot</span>ok.fr<span>robot</span></li>
+							<li class="contact-info--phone"><span>50</span><span>16</span><span>81</span><span>75</span><span>06</span></li>
 							<li>
 								<a
 									href="https://www.linkedin.com/in/robin-fernandes/"
